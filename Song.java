@@ -1,7 +1,7 @@
 /**
  * File for a Song class to be used in the Playlist Project
- * @author
- * @version
+ * @author Joseph Farnham & Marcel Zamora
+ * @version 1/25/24
  */
 public class Song {
     //Fields-- what information do we want each Song to store?
@@ -14,7 +14,6 @@ public class Song {
     /**
      * Constructor for objects of class Song
      * 
-     * 
      */
     public Song(String name, String artist, String time)
     {
@@ -23,29 +22,46 @@ public class Song {
         this.time = time;
         liked = false;
     }
-     /**
-      * Methods-- what will you want each Song to do?
-      * Consider all the getter methods (getName, getArtist, etc.)
-      * You should probably have a toString method to be able to get the information for the full
-      * song easily as well!
-      * What kind of mutator (setter) methods will you need?
-      */
+    /*
+     * getName method
+     * Returns the name of the song
+     * @return The song Name
+     */
     public String getName()
     {
         return name;
     }
+    /*
+     * getArtist method
+     * Returns the name of the artist of the song
+     * @return The song Name
+     */
     public String getArtist()
     {
         return artist;
     }
+    /*
+     * getTime method
+     * Returns the duration of the song
+     * @return The song Name
+     */
     public String getTime()
     {
         return time;
     }
+    /*
+     * switchLike method
+     * Flips whether the song is liked or not
+     */
     public void switchLike()
     {
         liked = !liked;
     }
+    /*
+     * isLiked method
+     * Returns if the song is liked or not
+     * @return Boolean of whether or not it is liked
+     */
     public boolean isLiked()
     {
         return liked;
