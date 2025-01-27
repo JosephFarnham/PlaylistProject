@@ -61,6 +61,42 @@ public class Playlist
         }
         return sum;
       }
-  
+      public String printPlaylist()
+      {
+        String print = "";
+        for(int i = 0; i < playlist.size(); i++)
+        {
+          print += playlist.get(i).getName() + ", ";
+          print += playlist.get(i).getName() + ", ";
+          print += "(" + playlist.get(i).getName() +")";
+          print += "\n";
+        }
+        return print;
+      }
+      public String printLiked()
+      {
+        String print = "";
+        for(int i = 0; i < playlist.size(); i++)
+        {
+          if(playlist.get(i).isLiked())
+            {
+              print += playlist.get(i).getName() + ", ";
+              print += playlist.get(i).getName() + ", ";
+              print += "(" + playlist.get(i).getName() +")";
+              print += "\n";
+            }
+        }
+        return print;
+      }
+      public void removeUnliked()
+      {
+        for(int i = 0; i < playlist.size(); i++)
+        {
+          if(!playlist.get(i).isLiked())
+          {
+            playlist.remove(i);
+          }
+        }
+      }
 
 }
