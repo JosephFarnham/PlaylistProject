@@ -12,7 +12,7 @@ public class Playlist
      * Fields-- This will likely just need to be the ArrayList of Songs. Reference our previous problems
      * (CarDealership, Zoo) for structure on how this will look
      */
-    ArrayList<Song> Playlist;
+    private ArrayList<Song> playlist;
 
 
 
@@ -23,7 +23,7 @@ public class Playlist
 
       public Playlist()
       {
-        Playlist = new ArrayList<Song>();
+        playlist = new ArrayList<Song>();
       }
 
       /**
@@ -36,17 +36,30 @@ public class Playlist
        * Determining the total duration of all songs
        * Removing all unliked songs from the playlist (careful with this one!)
        */
-      public void AddSong(String name, String artist, String time)
+      public void addSong(String name, String artist, String time)
       {
         Song song = new Song(name, artist, time);
-        Playlist.add(song);
+        playlist.add(song);
       }
 
-      public void LikeSong(Song a)
+      public void likeSong(Song a)
       {
         a.isLiked();
-        
+
+      }
+      public void removeSong(Song remove)
+      {
+        playlist.remove(remove);
       }
 
+      public void totalDuration()
+      {
+        int sum = 0;
+        for (int i = 0; i < playlist.size(); i++)
+        {
+          sum += playlist.get(i).getTime();
+        }
+      }
+  
 
 }
