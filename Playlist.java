@@ -36,7 +36,7 @@ public class Playlist
        * Determining the total duration of all songs
        * Removing all unliked songs from the playlist (careful with this one!)
        */
-      public void addSong(String name, String artist, String time)
+      public void addSong(String name, String artist, int time)
       {
         Song song = new Song(name, artist, time);
         playlist.add(song);
@@ -52,13 +52,14 @@ public class Playlist
         playlist.remove(remove);
       }
 
-      public void totalDuration()
+      public int totalDuration()
       {
         int sum = 0;
         for (int i = 0; i < playlist.size(); i++)
         {
           sum += playlist.get(i).getTime();
         }
+        return sum;
       }
   
 
