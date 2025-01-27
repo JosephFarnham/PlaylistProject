@@ -7,7 +7,7 @@ public class Song {
     //Fields-- what information do we want each Song to store?
     private String name;
     private String artist;
-    private String time;
+    private int time;
     private boolean liked;
 
 
@@ -15,7 +15,7 @@ public class Song {
      * Constructor for objects of class Song
      * 
      */
-    public Song(String name, String artist, String time)
+    public Song(String name, String artist, int time)
     {
         this.name = name;
         this.artist = artist;
@@ -45,7 +45,7 @@ public class Song {
      * Returns the duration of the song
      * @return The song Name
      */
-    public String getTime()
+    public int getTime()
     {
         return time;
     }
