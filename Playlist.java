@@ -42,9 +42,9 @@ public class Playlist
         playlist.add(song);
       }
 
-      public void likeSong(Song a)
+      public void likeSong(int place)
       {
-        a.isLiked();
+        playlist.get(place).switchLike();
 
       }
       public void removeSong(Song remove)
@@ -67,8 +67,17 @@ public class Playlist
         for(int i = 0; i < playlist.size(); i++)
         {
           print += playlist.get(i).getName() + ", ";
-          print += playlist.get(i).getName() + ", ";
-          print += "(" + playlist.get(i).getName() +")";
+          print += playlist.get(i).getArtist() + " ";
+          print += "(" + playlist.get(i).getTime() / 60 + ":";
+              if(playlist.get(i).getTime() % 60 < 10)
+              {
+                print += 0;
+              }
+              print += playlist.get(i).getTime() % 60 +")";
+          if(playlist.get(i).isLiked())
+          {
+            print += " - liked";
+          }
           print += "\n";
         }
         return print;
@@ -81,8 +90,12 @@ public class Playlist
           if(playlist.get(i).isLiked())
             {
               print += playlist.get(i).getName() + ", ";
-              print += playlist.get(i).getName() + ", ";
-              print += "(" + playlist.get(i).getName() +")";
+              print += playlist.get(i).getArtist() + ", ";print += "(" + playlist.get(i).getTime() / 60 + ":";
+              if(playlist.get(i).getTime() % 60 < 10)
+              {
+                print += 0;
+              }
+              print += playlist.get(i).getTime() % 60 +")";
               print += "\n";
             }
         }
