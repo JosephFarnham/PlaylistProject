@@ -1,24 +1,19 @@
 import java.util.ArrayList;
 
 /**
- * The Playlist class, which will keep track of a playlist of Song objects
- * Refer to the project description to make sure you have access to all available methods
- * @author Marcel Zamora 
+ * The Playlist class,
+ * Keeps track of a playlist of Song objects
+ * @author Marcel Zamora & Joseph Farnham
  * @version 1/24/25
  */
 public class Playlist
 {
-    /**
-     * Fields-- This will likely just need to be the ArrayList of Songs. Reference our previous problems
-     * (CarDealership, Zoo) for structure on how this will look
-     */
     private ArrayList<Song> playlist;
 
 
 
      /**
-      * Constructor-- this doesn't need any parameters. You should just initialize the ArrayList and
-      * then use additional methods to add Songs in one-by-one
+      * Constructor for objects of class playlist;
       */
 
       public Playlist()
@@ -36,22 +31,42 @@ public class Playlist
        * Determining the total duration of all songs
        * Removing all unliked songs from the playlist (careful with this one!)
        */
+      /**
+       * addSong method
+       * Mutator method that adds a new song to the playlist, 
+       * @param name The name of the song
+       * @param artist The name of the artist
+       * @param time the duration of the song in seconds
+      */
       public void addSong(String name, String artist, int time)
       {
         Song song = new Song(name, artist, time);
         playlist.add(song);
       }
-
+      /**
+       * likeSong
+       * Likes or unlikes a song in the playlist
+       * @param place Location of the song in the playlist
+       */
       public void likeSong(int place)
       {
         playlist.get(place).switchLike();
 
       }
-      public void removeSong(Song remove)
+      /** 
+       * removeSong method
+       * removes a song from the playlist
+       * @param place the position of the song
+      */
+      public void removeSong(int place)
       {
-        playlist.remove(remove);
+        playlist.remove(place);
       }
-
+      /**
+       * totalDuration method
+       * calculates and returns the total duration of all songs in the playlist
+       * @return the duration of the playlist in seconds
+       */
       public int totalDuration()
       {
         int sum = 0;
@@ -61,6 +76,11 @@ public class Playlist
         }
         return sum;
       }
+      /**
+       * printPlaylist method
+       * returns a string of the Playlist as a list with each song's title, artist, duration in (minutes : seconds), and like status
+       * @return String of the playlist
+       */
       public String printPlaylist()
       {
         String print = "";
@@ -82,6 +102,11 @@ public class Playlist
         }
         return print;
       }
+      /**
+       * printPlaylist method
+       * returns a string of only the liked songs in the playlist as a list with each song's title, artist, and duration in (minutes : seconds);
+       * @return String of the liked songs in the playlist
+       */
       public String printLiked()
       {
         String print = "";
@@ -101,6 +126,10 @@ public class Playlist
         }
         return print;
       }
+      /**
+       * removeUnliked method
+       * removes any songs that have not been liked from the playlist
+       */
       public void removeUnliked()
       {
         for(int i = 0; i < playlist.size(); i++)

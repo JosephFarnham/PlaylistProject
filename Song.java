@@ -1,5 +1,6 @@
 /**
- * File for a Song class to be used in the Playlist Project
+ * Song class
+ * Holds information about a song
  * @author Joseph Farnham & Marcel Zamora
  * @version 1/25/24
  */
@@ -33,7 +34,7 @@ public class Song {
     }
     /*
      * getArtist method
-     * Returns the name of the artist of the song
+     * Returns the artist of the song
      * @return The song Name
      */
     public String getArtist()
