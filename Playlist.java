@@ -132,11 +132,16 @@ public class Playlist
        */
       public void removeUnliked()
       {
-        for(int i = 0; i < playlist.size(); i++)
+        int i = 0;
+        while(i < playlist.size())
         {
           if(!playlist.get(i).isLiked())
           {
             playlist.remove(i);
+          }
+          else
+          {
+            i++;
           }
         }
       }

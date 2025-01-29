@@ -20,6 +20,7 @@ public class PlaylistTester {
         p.addSong("Swing Lynn","Twin Cabins", 322);
         p.addSong("On Melancholy Hill", "Gorillaz", 233);
         p.addSong("Roundabout","Yes" , 516);
+        p.addSong("Watermelon Man", "Herbie Hancock", 389);
 
 
 
@@ -27,16 +28,16 @@ public class PlaylistTester {
         //Print out all the songs in the playlist to verify it's working correctly
         System.out.printf(p.printPlaylist());
 
-        System.out.println("\nLiking the songs in position 0, 2, 4\n");
+        System.out.println("\nLiking the songs in position 0, 2, 3\n");
         //Once your songs are 'liked', this should be reflected in the next printout
         p.likeSong(0);
         p.likeSong(2);
-        p.likeSong(4);
+        p.likeSong(3);
         System.out.println("Printing the songs...\n");
         System.out.printf(p.printPlaylist());
 
-        System.out.println("\nRemoving the song in position 4, 1, \n");
-        p.removeSong(4);
+        System.out.println("\nRemoving the song in position 1, 3, \n");
+        p.removeSong(3);
         p.removeSong(1);
         System.out.println("Printing the songs...\n");
         System.out.println(p.printPlaylist());
